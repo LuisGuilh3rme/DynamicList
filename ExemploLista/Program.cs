@@ -24,7 +24,8 @@ void Menu(int opc)
     {
         case 1:
             Console.WriteLine("Quantos itens serão adicionados?");
-            int quantity = int.Parse(Console.ReadLine());
+            int.TryParse(Console.ReadLine(), out int quantity);
+            if (quantity == 0) break;
             AddItems(quantity);
             break;
         case 2:
